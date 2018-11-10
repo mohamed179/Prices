@@ -15,4 +15,11 @@ class Category extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * get the category items
+     */
+    public function items () {
+        return $this->hasMany('App\Item');
+    }
 }

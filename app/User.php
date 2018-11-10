@@ -27,4 +27,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    /*
+     * get the user role
+     */
+    public function role () {
+        return $this->belongsTo('App\Role');
+    }
+
+    /*
+     * get the user searchLogs
+     */
+    public function searchLogs () {
+        return $this->hasMany('App\SearchLog');
+    }
+
+    /*
+     * get the admin actionLogs
+     */
+    public function actionLogs () {
+        return $this->hasMany('App\ActionLog', 'admin_id');
+    }
 }

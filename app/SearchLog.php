@@ -15,4 +15,18 @@ class SearchLog extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * get the searchLog user
+     */
+    public function user () {
+        return $this->belongsTo('App\User');
+    }
+    
+    /**
+     * get the searchLog type
+     */
+    public function searchType () {
+        return $this->belongsTo('App\SearchType');
+    }
 }

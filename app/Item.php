@@ -15,4 +15,11 @@ class Item extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * get the item category
+     */
+    public function category () {
+        return $this->belongsTo('App\Category');
+    }
 }

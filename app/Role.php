@@ -15,4 +15,11 @@ class Role extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /*
+     * get the role users
+     */
+    public function users () {
+        return $this->hasMany('App\User');
+    }
 }
