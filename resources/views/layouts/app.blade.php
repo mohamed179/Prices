@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
+    @yield('scripts')
 </head>
 <body>
     <div id="app">
@@ -33,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @yield('navbar-items')
                     </ul>
 
                     <!-- Right Side Of Navbar -->
