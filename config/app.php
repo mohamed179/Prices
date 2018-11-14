@@ -173,6 +173,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // yajra/laravel-datatables
+        Yajra\DataTables\DataTablesServiceProvider::class,
+
     ],
 
     /*
