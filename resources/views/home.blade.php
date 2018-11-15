@@ -85,12 +85,12 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Items</a>
-                    <a href="#">Categories</a>
-                    <a href="#">About us</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Acknowledgement</a>
-                    <a href="https://github.com/">GitHub</a>
+                    <a href="/items">Items</a>
+                    <a href="/categories">Categories</a>
+                    <a href="/about">About us</a>
+                    <a href="/contactus">Contact us</a>
+                    <a href="/acknowledgement">Acknowledgement</a>
+                    <a href="https://github.com/">GitHub Reposetory</a>
                 </div>
             </div>
         </div>
