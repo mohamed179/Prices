@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="border-bottom: 1px solid #aaaaaa">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -36,6 +36,31 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @yield('navbar-items')
+                        @auth
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Search
+                                </a>
+                                <div class="dropdown-menu pull-right"  style="min-width: 400px; padding: 10px" aria-labelledby="navbarDropdown">
+                                    <form action="/search" method="POST">
+                                        @csrf
+                                        <label for="type">Search type:</label>
+                                        <select class="form-control" name="type">
+                                            <option value="items">Items</option>
+                                            <option value="categories">Categories</option>
+                                            <option value="prices">Prices</option>
+                                        </select>
+                                        <div style="padding-top: 10px">
+                                            <label for="query">Search text:</label>
+                                            <input type="text" class="form-control" placeholder="Search.." name="query">
+                                        </div>
+                                        <div style="padding-top: 10px">
+                                            <input class="form-control btn btn-outline-success my-2 my-sm-0" type="submit" value="Search" name="submit">
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

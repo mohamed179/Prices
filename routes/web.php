@@ -15,6 +15,13 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/items', 'ItemController@index')->name('items')->middleware('auth');
+/**
+ * User group of routes
+ */
+Route::middleware(['auth'])->group(function () {
+    Route::get('/items', 'ItemController@index')->name('items');
 
-Route::get('/categories', 'CategoryController@index')->name('categories')->middleware('auth');
+    Route::get('/categories', 'CategoryController@index')->name('categories');
+
+    Route::post('/search', 'SearchController@index')->name('search');
+});
